@@ -1,6 +1,6 @@
 using System;
 
-namespace WebAPITask.Areas.HelpPage.ModelDescriptions
+namespace WebAPI.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

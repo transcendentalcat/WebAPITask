@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace WebAPITask
+namespace WebAPI
 {
     public class FilterConfig
     {
