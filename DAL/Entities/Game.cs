@@ -14,5 +14,6 @@ namespace DAL.Entities
         public string PublisherId { get; set; }
         public Publisher Publisher { get; set; }
         public ICollection<Comment> Comments { get; set; }
+        public ICollection<Genre> Genres { get; set; }
     }
 }
