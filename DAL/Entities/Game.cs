@@ -12,8 +12,10 @@ namespace DAL.Entities
 	    public string Name { get; set; }
         public string Description { get; set; }
         public string PublisherId { get; set; }
-        public Publisher Publisher { get; set; }
-        public ICollection<Comment> Comments { get; set; }
-        public ICollection<Genre> Genres { get; set; }
+        public virtual Publisher Publisher { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Genre> Genres { get; set; }
+        public virtual ICollection<PlatformType> PlatformTypes { get; set; }
+
     }
 }
