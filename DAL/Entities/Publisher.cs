@@ -8,8 +8,8 @@ namespace DAL.Entities
 {
     public class Publisher
     {
-        string Key { get; set;}
-	    string Name { get; set;}
+        public string Id { get; set;}
+        public string Name { get; set;}
         public ICollection<Game> Games { get; set; }
     }
 
