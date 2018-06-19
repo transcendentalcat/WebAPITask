@@ -13,5 +13,6 @@ namespace DAL.Entities
         public string Description { get; set; }
         public string PublisherId { get; set; }
         public Publisher Publisher { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }
