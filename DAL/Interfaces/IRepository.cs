@@ -11,14 +11,14 @@ namespace DAL.Interfaces
     {
         IEnumerable<T> GetAll();
 
-        T Get(int id);
+        T Get(string id);
 
         IEnumerable<T> Find(Func<T, Boolean> predicate);
 
-        void Create(T item);
+        void Create(T entity);
 
-        void Update(T item);
+        void Update(T entity);
 
-        void Delete(int id);
+        void Delete(string id);
     }
 }
