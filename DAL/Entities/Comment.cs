@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class Comment
+    public class Comment : Entity
     {
         public string Id { get; set; }
         public string Name { get; set; }

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Entities
+namespace BLL.DTO
 {
-    public class PlatformType : Entity
+    public class PlatformTypeDto
     {
         public int Id { get; set; }
         public string Type { get; set; }
-        public virtual ICollection<Game> Games { get; set; }
     }
 }

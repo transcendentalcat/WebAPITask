@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Entities
+namespace BLL.DTO
 {
-    public class Genre : Entity
+    public class PublisherDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Genre Subgenre { get; set; }
-        public virtual ICollection<Game> Games { get; set; }
     }
 }

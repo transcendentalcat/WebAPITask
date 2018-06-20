@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Entities;
 
-namespace DAL.Entities
+namespace BLL.DTO
 {
-    public class Genre : Entity
+    public class CommentDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Genre Subgenre { get; set; }
-        public virtual ICollection<Game> Games { get; set; }
+        public string Body { get; set; }
+        public int GameId { get; set; }
+        public Comment ParentComment { get; set; }
     }
 }

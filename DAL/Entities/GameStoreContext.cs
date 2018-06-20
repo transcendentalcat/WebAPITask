@@ -24,6 +24,11 @@ namespace DAL.Entities
             : base(connectionString)
         {
         }
-        
+
+        public GameStoreContext()
+            : base()
+        {
+        }
+
     }
 }
