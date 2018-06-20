@@ -9,5 +9,8 @@ namespace DAL.Repositories
 {
     public class PublisherRepository : Repository<Publisher>
     {
+        public PublisherRepository(GameStoreContext context) : base(context)
+        {
+        }
     }
 }

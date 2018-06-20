@@ -9,5 +9,8 @@ namespace DAL.Repositories
 {
     public class CommentRepository : Repository<Comment>
     {
+        public CommentRepository(GameStoreContext context) : base(context)
+        {
+        }
     }
 }

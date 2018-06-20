@@ -9,5 +9,8 @@ namespace DAL.Repositories
 {
     public class PlatformTypeRepository : Repository<PlatformType>
     {
+        public PlatformTypeRepository(GameStoreContext context) : base(context)
+        {
+        }
     }
 }
