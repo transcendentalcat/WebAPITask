@@ -44,7 +44,7 @@ namespace DAL.UnitOfWork
             }
         }
 
-        public IRepository<PlatformType> PlatformType
+        public IRepository<PlatformType> PlatformTypes
         {
             get
             {
