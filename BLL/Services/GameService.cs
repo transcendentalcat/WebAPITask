@@ -5,12 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using BLL.DTO;
 using BLL.IServices;
+using DAL.Interfaces;
 
 namespace BLL.Services
 {
     public class GameService : IGameService
-    {
-        public void Create(GameDto item)
+    {       
+        IUnitOfWork db { get; set; }
+
+        public GameService(IUnitOfWork uow)
+        {
+            db = uow;
+        }
+
+            public void Create(GameDto item)
         {
             throw new NotImplementedException();
         }
@@ -37,7 +45,13 @@ namespace BLL.Services
 
         public GameDto GetGame(int id)
         {
-            throw new NotImplementedException();
+            var game = db.Games.Get(id);
+
+            if (game == null)
+
+                throw new Exception("Game is not found");
+
+            return new GameDto { Id = id, Name = game.Name, Description = game.Description, PublisherId = game.PublisherId};
         }
 
         public IEnumerable<GameDto> GetGamesByGenre(string genre)
