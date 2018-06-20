@@ -10,9 +10,7 @@ using DAL.Repositories;
 namespace DAL.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
-
     {
-
         private GameStoreContext db;
 
         private CommentRepository commentRepository;
@@ -23,7 +21,7 @@ namespace DAL.UnitOfWork
 
         public UnitOfWork()
         {
-            db = new GameStoreContext();();
+            db = new GameStoreContext();
         }
 
         public IRepository<Game> Games
