@@ -8,10 +8,10 @@ namespace DAL.Entities
 {
     public class Game : Entity
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 	    public string Name { get; set; }
         public string Description { get; set; }
-        public string PublisherId { get; set; }
+        public int PublisherId { get; set; }
         public virtual Publisher Publisher { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Genre> Genres { get; set; }

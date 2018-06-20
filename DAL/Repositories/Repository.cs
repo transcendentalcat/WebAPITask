@@ -9,7 +9,7 @@ using DAL.Interfaces;
 
 namespace DAL.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : Entity
     {
         private GameStoreContext db;
         //private IQueryable<T> dbSet;
@@ -20,6 +20,11 @@ namespace DAL.Repositories
             //dbSet = context.Set<T>();
         }
 
+        public Repository()
+        {
+            db = new GameStoreContext();           
+        }
+
         public void Create(T entity)
         {
             db.Set<T>().Add(entity);
@@ -27,7 +32,7 @@ namespace DAL.Repositories
 
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             var entity = db.Set<T>().Find(id);
 
@@ -44,7 +49,7 @@ namespace DAL.Repositories
             return result;
         }
 
-        public T Get(string id)
+        public T Get(int id)
         {
             T result = null;
 

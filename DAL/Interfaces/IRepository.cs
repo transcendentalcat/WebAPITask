@@ -12,7 +12,7 @@ namespace DAL.Interfaces
     {
         IEnumerable<T> GetAll();
 
-        T Get(string id);
+        T Get(int id);
 
         IEnumerable<T> Find(Func<T, Boolean> predicate);
 
@@ -20,6 +20,6 @@ namespace DAL.Interfaces
 
         void Update(T entity);
 
-        void Delete(string id);
+        void Delete(int id);
     }
 }
