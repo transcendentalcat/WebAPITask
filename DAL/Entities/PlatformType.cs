@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class PlatformType
+    public class PlatformType : Entity
     {
         public string Id { get; set; }
         public string Type { get; set; }
