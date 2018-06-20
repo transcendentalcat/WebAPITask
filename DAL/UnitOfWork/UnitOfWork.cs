@@ -77,17 +77,13 @@ namespace DAL.UnitOfWork
         }
 
         public async Task SaveAsync()
-
         {
-
             await db.SaveChangesAsync();
-
         }
 
         private bool disposed = false;
 
         public virtual void Dispose(bool disposing)
-
         {
             if (!this.disposed)
             {
@@ -106,6 +102,5 @@ namespace DAL.UnitOfWork
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
     }
 }
