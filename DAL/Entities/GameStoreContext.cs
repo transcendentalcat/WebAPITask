@@ -30,7 +30,7 @@ namespace DAL.Entities
         }
     }
 
-    class StoreDbInitializer : DropCreateDatabaseIfModelChanges<GameStoreContext>
+    public class StoreDbInitializer : DropCreateDatabaseIfModelChanges<GameStoreContext>
     {
         protected override void Seed(GameStoreContext db)
         {

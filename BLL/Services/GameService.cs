@@ -13,7 +13,7 @@ using DAL.Interfaces;
 namespace BLL.Services
 {
     public class GameService : IGameService
-    {       
+    {
         private IUnitOfWork db { get; set; }
 
         public GameService(IUnitOfWork uow)
@@ -57,7 +57,7 @@ namespace BLL.Services
             if (comments != null)
             {
                 game.Comments = new List<Comment>();
-                
+
                 foreach (var comment in comments)
                 {
                     if (comment.Id == 0)
@@ -99,7 +99,7 @@ namespace BLL.Services
         public GameDto GetGame(int id)
         {
             var game = db.Games.Get(id);
-         
+
             var mapper = MapBuilder.Initialize();
 
             if (game == null)
