@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 using BLL.DTO;
 using BLL.IServices;
@@ -90,6 +92,19 @@ namespace WebAPI.Controllers
                gameService.Delete(id);
             return Request.CreateResponse(HttpStatusCode.OK); 
             }     
+        }
+
+        [HttpGet]
+        [Route("api/games/{id}/download")]
+        public HttpResponseMessage DownloadGame(int id)
+        {
+            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+            var fileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "/file.txt", FileMode.Open);
+            response.Content = new StreamContent(fileStream);
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
+            response.Content.Headers.ContentDisposition.FileName = fileStream.Name;
+            return response;
         }
     }
 }
