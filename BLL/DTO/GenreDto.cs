@@ -9,8 +9,10 @@ namespace BLL.DTO
 {
     public class GenreDto
     {
-        public int Id { get; set; }
         public string Name { get; set; }
-        public Genre Subgenre { get; set; }
+        public int? ParentGenreId { get; set; }
+        public ICollection<GenreDto> SubGenre { get; set; }
+        public ICollection<GameDto> Games { get; set; }
+
     }
 }

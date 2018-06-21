@@ -7,12 +7,10 @@ using BLL.DTO;
 
 namespace BLL.IServices
 {
-    interface ICommentService
+    public interface ICommentService
     {
-        CommentDto GetComment(int id);
-        IEnumerable<CommentDto> GetAllComments();
-        IEnumerable<CommentDto> FindByCriteria(Func<CommentDto, Boolean> predicate);
-        void Create(CommentDto item);
-        void Delete(int id);
+        //CommentDto GetComment(int id);
+        IEnumerable<CommentDto> GetAllComments(int gameId);
+        void AddComment(int gameId, CommentDto commentDto);
     }
 }

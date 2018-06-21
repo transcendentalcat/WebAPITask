@@ -8,9 +8,6 @@ namespace DAL.Entities
 {
     public abstract class Entity
     {
-        public override string ToString()
-        {
-            return string.Format("{0} - {1}", GetType().Name, Id);
-        }
+      
     }
 }

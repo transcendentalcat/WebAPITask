@@ -11,7 +11,6 @@ namespace BLL.IServices
     {
         GameDto GetGame(int id);
         IEnumerable<GameDto> GetAllGames();
-        IEnumerable<GameDto> FindByCriteria(Func<GameDto, Boolean> predicate);
         IEnumerable<GameDto> GetGamesByGenre(string genre);
         IEnumerable<GameDto> GetGamesByPlatformtype(string platform);
         void Create(GameDto item);
