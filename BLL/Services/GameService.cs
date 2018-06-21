@@ -139,5 +139,47 @@ namespace BLL.Services
             var result = mapper.Map<IEnumerable<Game>, List<GameDto>>(games);
             return result;
         }
+
+        //Comment
+
+        public void AddComment(id gameId, CommentDto commentDto)
+        {
+            var comment = _mapper.Map<CommentDTO, Comment>(commentDto);
+
+            if (comment.ParentCommentId.HasValue)
+            {
+                var author = "";
+
+                var parentComment = db.Comments.GetElementById(comment.ParentCommentId.Value);
+
+                comment.ParentComment = parentComment;
+                comment.Game = parentComment?.Game;
+
+                author += $"{parentComment?.Name} {Environment.NewLine}";
+                comment.Body = author + comment.Body;
+            }
+            else if (!String.IsNullOrWhiteSpace(gameId))
+            {
+                comment.Game = db.Games.Get(gameKey);
+            }
+            else
+            {
+                throw new MissingFieldException("Comment is not attached neither to game, nor to other comment");
+            }
+
+            db.Comments.Create(comment);
+
+            db.Save();
+        }
+
+        public IEnumerable<CommentDto> GetAllCommentsForGame(id gameId)
+        {
+            var comments = db.Games.Get(gameId).Comments;
+
+            var result = _mapper.Map<IEnumerable<Comment>, IEnumerable<CommentDTO>>(comments);
+
+            return result;
+        }
+
     }
 }

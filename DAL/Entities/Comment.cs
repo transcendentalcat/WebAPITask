@@ -13,6 +13,9 @@ namespace DAL.Entities
         public string Body { get; set; }
         public string GameId { get; set; }
         public virtual Game Game { get; set; }
-        public Comment ParentComment { get; set; }
+        public int? ParentCommentId { get; set; }
+        public virtual Comment ParentComment { get; set; }
+        public virtual ICollection<Comment> ChildComments { get; set; }
+
     }
 }
